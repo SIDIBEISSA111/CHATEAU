@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formule de Calcul Transparente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+        }
+        .container .image {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .container .image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .container .text {
+            flex: 2;
+        }
+        .container .text h3 {
+            color: #27ae60;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .container .text p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .container .text .link {
+            display: inline-block;
+            background-color: #27ae60;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        .container .text .link:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="img1.webp" alt="Calcul">
+        </div>
+        <div class="text">
+            <h3>Formule de Calcul Transparente</h3>
+            <p>
+                Notre formule de calcul est simple et claire. Elle repose sur un principe de mesure précise de la consommation 
+                d'eau à partir de l'index du compteur. Le montant de votre facture est calculé selon la méthode suivante :<br><br>
+                <strong>MontantFacture = (IndexActuel - IndexPrécédent) × 200</strong><br><br>
+                Vous pouvez suivre votre consommation à tout moment et comprendre précisément comment vos dépenses sont 
+                calculées. Cette formule garantit une facturation transparente et sans surprise.
+            </p>
+            <a href="#contact" class="link">Prendre un rendez-vous</a>
+        </div>
+    </div>
+</body>
+</html>

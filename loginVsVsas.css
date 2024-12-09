@@ -1,0 +1,222 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styles généraux pour le corps de la page */
+body {
+    background-color: #c9d6ff; /* Couleur de fond */
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff); /* Dégradé de couleur de fond */
+    display: flex; /* Flexbox pour centrer les éléments */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Pleine hauteur de la vue */
+}
+
+/* Styles du conteneur principal */
+.container {
+    background-color: #fff; /* Couleur de fond */
+    border-radius: 30px; /* Coins arrondis */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35); /* Ombre portée */
+    position: relative; /* Position relative pour les éléments enfants absolus */
+    overflow: hidden; /* Masquer le contenu débordant */
+    width: 768px; /* Largeur fixe */
+    max-width: 100%; /* Largeur maximale de 100% pour s'adapter à l'écran */
+    min-height: 480px; /* Hauteur minimale */
+}
+
+/* Styles pour les paragraphes */
+.container p {
+    font-size: 14px; /* Taille de la police */
+    line-height: 20px; /* Hauteur de ligne */
+    letter-spacing: 0.3px; /* Espacement des lettres */
+    margin: 20px 0; /* Marge extérieure haut et bas */
+}
+
+/* Styles pour les liens */
+.container a {
+    color: #333; /* Couleur du texte */
+    font-size: 13px; /* Taille de la police */
+    text-decoration: none; /* Pas de soulignement */
+    margin: 15px 0 10px; /* Marge extérieure haut, bas et bas */
+}
+
+/* Styles pour les boutons */
+.container button {
+    background-color: #512da8; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    font-size: 12px; /* Taille de la police */
+    padding: 10px 45px; /* Rembourrage */
+    border: 1px solid transparent; /* Bordure transparente */
+    border-radius: 8px; /* Coins arrondis */
+    font-weight: 600; /* Gras */
+    letter-spacing: 0.5px; /* Espacement des lettres */
+    text-transform: uppercase; /* Majuscules */
+    margin-top: 10px; /* Marge extérieure en haut */
+    cursor: pointer; /* Curseur pointeur */
+}
+
+/* Styles pour les formulaires */
+.container form {
+    background-color: #fff; /* Couleur de fond */
+    display: flex; /* Flexbox */
+    align-items: center; /* Alignement vertical */
+    justify-content: center; /* Alignement horizontal */
+    flex-direction: column; /* Empilement vertical des éléments */
+    padding: 0 40px; /* Rembourrage */
+    height: 100%; /* Hauteur de 100% */
+}
+
+/* Styles pour les champs de saisie */
+.container input {
+    background-color: #eee; /* Couleur de fond */
+    border: none; /* Pas de bordure */
+    margin: 8px 0; /* Marge extérieure haut et bas */
+    padding: 10px 15px; /* Rembourrage */
+    font-size: 13px; /* Taille de la police */
+    border-radius: 8px; /* Coins arrondis */
+    outline: none; /* Pas de contour de focus */
+}
+
+/* Styles pour le conteneur de formulaire */
+.form-container {
+    position: absolute; /* Position absolue pour se superposer au conteneur principal */
+    top: 0; /* En haut */
+    height: 100%; /* Hauteur de 100% */
+    transition: all 0.6s ease-in-out; /* Animation de transition fluide */
+}
+
+/* Styles pour le formulaire de connexion */
+.sign-in {
+    left: 0; /* Positionnement à gauche */
+    width: 50%; /* Largeur de moitié */
+    z-index: 2; /* Z-index pour empiler au-dessus */
+}
+
+/* Styles pour activer le formulaire de connexion */
+.container.active .sign-in {
+    transform: translateX(100%); /* Déplacement vers la droite */
+}
+
+/* Styles pour le formulaire d'inscription */
+.sign-up {
+    left: 0; /* Positionnement à gauche */
+    width: 50%; /* Largeur de moitié */
+    opacity: 0; /* Opacité initiale */
+    z-index: 1; /* Z-index inférieur */
+}
+
+/* Styles pour activer le formulaire d'inscription */
+.container.active .sign-up {
+    transform: translateX(100%); /* Déplacement vers la droite */
+    opacity: 1; /* Opacité maximale */
+    z-index: 5; /* Z-index supérieur */
+    animation: nove 0.6s; /* Animation de transition */
+}
+
+/* Définition de l'animation nove */
+@keyframes nove {
+    0%, 49.99% {
+        opacity: 0; /* Opacité de 0 */
+        z-index: 1; /* Z-index inférieur */
+    }
+    50%, 100% {
+        opacity: 1; /* Opacité de 1 */
+        z-index: 5; /* Z-index supérieur */
+    }
+}
+
+/* Styles pour les icônes sociales */
+.social-icon {
+    margin: 20px 0; /* Marge extérieure haut et bas */
+}
+
+.social-icon a {
+    border: 1px solid #ccc; /* Bordure */
+    border-radius: 20%; /* Coins arrondis */
+    display: inline-flex; /* Affichage en ligne avec flexbox */
+    justify-content: center; /* Alignement horizontal */
+    align-items: center; /* Alignement vertical */
+    margin: 0 3px; /* Marge extérieure gauche et droite */
+    width: 40px; /* Largeur */
+    height: 40px; /* Hauteur */
+}
+
+/* Styles pour le conteneur de bascule */
+.toggle-container {
+    position: absolute; /* Position absolue */
+    top: 0; /* En haut */
+    left: 50%; /* À mi-chemin de la largeur */
+    width: 50%; /* Largeur de moitié */
+    height: 100%; /* Hauteur de 100% */
+    overflow: hidden; /* Masquer le contenu débordant */
+    transition: all 0.6s ease-in-out; /* Animation de transition fluide */
+    border-radius: 150px 0 0 100px; /* Coins arrondis */
+    z-index: 100; /* Z-index supérieur */
+}
+
+/* Styles pour le conteneur de bascule actif */
+.container.active .toggle-container {
+    transform: translateX(-100%); /* Déplacement vers la gauche */
+    border-radius: 0 150px 100px 0; /* Coins arrondis */
+}
+
+/* Styles pour le bouton de bascule */
+.toggle {
+    background-color: #512da8; /* Couleur de fond */
+    height: 100%; /* Hauteur de 100% */
+    background: linear-gradient(to right,#5c6bc0, #512da8); /* Dégradé de couleur de fond */
+    color: #fff; /* Couleur du texte */
+    position: relative; /* Position relative */
+    left: -100%; /* Décalage vers la gauche */
+    height: 100%; /* Hauteur de 100% */
+    width: 200%; /* Largeur de 200% */
+    transform: translateX(0); /* Pas de transformation initiale */
+    transition: all 0.6s ease-in-out; /* Animation de transition fluide */
+}
+
+/* Styles pour le bouton de bascule actif */
+.container.active .toggle {
+    transform: translateX(50%); /* Déplacement vers la droite */
+}
+
+/* Styles pour le panneau de bascule */
+.toggle-panel {
+    position: absolute; /* Position absolue */
+    width: 50%; /* Largeur de moitié */
+    height: 100%; /* Hauteur de 100% */
+    display: flex; /* Flexbox */
+    align-items: center; /* Alignement vertical */
+    justify-content: center; /* Alignement horizontal */
+    flex-direction: column; /* Empilement vertical des éléments */
+    padding: 0 30px; /* Rembourrage */
+    text-align: center; /* Alignement du texte au centre */
+    top: 0; /* En haut */
+    transform: translateX(0); /* Pas de transformation initiale */
+    transition: 0.6s ease-in-out; /* Animation de transition fluide */
+}
+
+/* Styles pour le panneau de bascule de gauche */
+.toggle-left {
+    transform: translateX(-200%); /* Déplacement vers la gauche */
+}
+
+/* Styles pour le panneau de bascule de gauche actif */
+.container.active .toggle-left {
+    transform: translateX(0); /* Pas de transformation */
+}
+
+/* Styles pour le panneau de bascule de droite */
+.toggle-right {
+    right: 0; /* À droite */
+    transform: translateX(0); /* Pas de transformation */
+}
+
+/* Styles pour le panneau de bascule de droite actif */
+.container.active .toggle-right {
+    transform: translateX(200px); /* Déplacement vers la droite */
+}

@@ -10,7 +10,7 @@ body {
     color: #333;
 }
 .container {
-    width: 95%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -39,12 +39,21 @@ header a {
     color: #333;
     font-weight: bold;
 }
+
+header a:hover{
+    text-decoration: underline;
+}
+
 header .btn {
-    background: #000;
-    color: #fff;
+    border: 3px solid #000;
     padding: 10px 20px;
     border-radius: 5px;
 }
+header .btn:hover{
+    background: #000;
+    color: white;
+}
+
 
 
 .hero {
@@ -61,7 +70,7 @@ header .btn {
     margin-top: 100px;
 }
 .hero .btn{
-    margin-top: 120px;
+    margin-top: 200px;
     font-size: 2rem;
 
 }
@@ -171,6 +180,11 @@ header .btn {
     justify-content: space-between;
     gap: 40px;
 }
+
+.cards h3{
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
 .card {
     background: #f9f9f9;
     padding: 20px;
@@ -178,6 +192,17 @@ header .btn {
     flex: 1;
     box-shadow: 100px 5px 45px 55px rgba(18, 15, 15, 0.1);
     text-align: left;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); 
+
+}
+
+.card:hover {
+    transform: scale(1.1); 
+}
+
+.card:focus {
+    outline: none;
+    transform: scale(1.1);
 }
 .card img {
     height: 40vh;
@@ -185,13 +210,17 @@ header .btn {
     border-radius: 10px;
     margin-bottom: 10px;
 }
-.card h4 {
+.card a {
+    text-decoration: none;    
     font-size: 1.2rem;
     margin-bottom: 10px;
     cursor: pointer;
+    color: #000;
 
 }
-.card h4:hover {
+.card a:hover {
     color: #18e742;
     transform: translateY(-2px);
+    transition: transform 0.3s ease, color 0.3s ease; /* Animation douce */
+
 }
